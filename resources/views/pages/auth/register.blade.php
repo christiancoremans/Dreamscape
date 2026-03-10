@@ -7,27 +7,16 @@
 
         <form method="POST" action="{{ route('register.store') }}" class="flex flex-col gap-6">
             @csrf
-            <!-- Name -->
+            <!-- Username -->
             <flux:input
-                name="name"
-                :label="__('Name')"
-                :value="old('name')"
+                name="username"
+                :label="__('Username')"
+                :value="old('username')"
                 type="text"
                 required
                 autofocus
-                autocomplete="name"
-                :placeholder="__('Full name')"
-            />
-
-            <!-- Email Address -->
-            <flux:input
-                name="email"
-                :label="__('Email address')"
-                :value="old('email')"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="email@example.com"
+                autocomplete="username"
+                :placeholder="__('Choose a unique username')"
             />
 
             <!-- Password -->

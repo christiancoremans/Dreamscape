@@ -82,4 +82,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notification::class);
     }
+
+    /**
+     * Get the user's initials from username.
+     */
+    public function initials(): string
+    {
+        // Take first 2 characters of username as initials
+        return strtoupper(substr($this->username, 0, 2));
+    }
 }
