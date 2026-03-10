@@ -51,6 +51,39 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Home Path
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the path where users will get redirected during
+    | authentication or password reset when the operations are successful
+    | and the user is authenticated. You are free to change this value.
+    |
+    */
+
+    'home' => '/',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fortify Redirects
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the redirects after various authentication
+    | operations are successful. If a redirect is null, the 'home' value
+    | above will be used as the fallback.
+    |
+    */
+
+    'redirects' => [
+        'login' => '/',
+        'logout' => null,
+        'password-confirmation' => null,
+        'register' => '/',
+        'email-verification' => null,
+        'password-reset' => null,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Lowercase Usernames
     |--------------------------------------------------------------------------
     |
@@ -61,19 +94,6 @@ return [
     */
 
     'lowercase_usernames' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Home Path
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the path where users will get redirected during
-    | authentication or password reset when the operations are successful
-    | and the user is authenticated. You are free to change this value.
-    |
-    */
-
-    'home' => '/dashboard',
 
     /*
     |--------------------------------------------------------------------------
