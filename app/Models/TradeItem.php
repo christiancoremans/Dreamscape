@@ -24,6 +24,7 @@ class TradeItem extends Model
     protected $fillable = [
         'trade_id',
         'item_id',
+        'offered_by_user_id',
     ];
 
     /**
@@ -40,5 +41,13 @@ class TradeItem extends Model
     public function item()
     {
         return $this->belongsTo(Item::class);
+    }
+
+    /**
+     * Get the user who offered this item.
+     */
+    public function offeredBy()
+    {
+        return $this->belongsTo(User::class, 'offered_by_user_id');
     }
 }

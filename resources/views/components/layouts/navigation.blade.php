@@ -38,6 +38,10 @@
                             Inventory
                         </a>
 
+                        <a href="{{ route('trades.index') }}" class="text-sm font-medium hover:text-black/60 transition-colors">
+                            Trades
+                        </a>
+
                         <a href="{{ route('profile.edit') }}" class="text-sm font-medium hover:text-black/60 transition-colors">
                             Profile
                         </a>

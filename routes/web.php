@@ -13,6 +13,11 @@ Route::middleware(['auth'])->group(function () {
     
     // Inventory routes (authenticated only)
     Route::get('/inventory', App\Livewire\Inventory\Index::class)->name('inventory.index');
+    
+    // Trade routes (authenticated only)
+    Route::get('/trades', App\Livewire\Trades\Index::class)->name('trades.index');
+    Route::get('/trades/create', App\Livewire\Trades\Create::class)->name('trades.create');
+    Route::get('/trades/{id}', App\Livewire\Trades\Show::class)->name('trades.show');
 });
 
 require __DIR__.'/settings.php';
