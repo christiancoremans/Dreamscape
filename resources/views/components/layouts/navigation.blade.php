@@ -46,6 +46,12 @@
                             Profile
                         </a>
 
+                        @if(auth()->user()->role === 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="text-sm font-medium hover:text-black/60 transition-colors">
+                                Admin
+                            </a>
+                        @endif
+
                         <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
                             <button type="submit" class="text-sm font-medium hover:text-black/60 transition-colors">

@@ -25,7 +25,7 @@ class UserFactory extends Factory
         return [
             'username' => fake()->unique()->userName(),
             'password' => static::$password ??= Hash::make('password'),
-            'role' => 'user',
+            'role' => 'player',
         ];
     }
 
@@ -36,6 +36,16 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'admin',
+        ]);
+    }
+
+    /**
+     * Indicate that the user is a player.
+     */
+    public function player(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'player',
         ]);
     }
 
